@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // publicDir: "./src/assets/Deepanshu_Arya_9210760003.pdf",
+  // publicDir: "./public/resumes/",
   // // Other configuration options...
   // optimizeDeps: {
   //   include: ["pdfjs-dist/build/pdf.worker.min.js"], // If you're using pdfjs, include it in the optimized dependencies
