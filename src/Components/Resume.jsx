@@ -57,17 +57,17 @@ const Resume = () => {
               <div className="md:block ">
                 <img className="h-20 w-20 mx-auto rounded-lg " src={my_pic} />
                 <div className="mb-12 text-center mt-4 justify-center items-left mx-4 text-Inconsolata">
-                  <h1 className="text-xl text-gray-700 font-bold text-Inconsolata">
+                  <h1 className="text-xl text-gray-900 font-bold text-Inconsolata">
                     Deepanshu Arya
                   </h1>
                   <div className="md:text-sm text-gray-600">Programmer</div>
-                  <div className="text-gray-600 md:hidden mt-1">
+                  <div className="text-gray-8 md:hidden mt-1">
                     (deepanshuarya2024@gmail.com)
                   </div>
                 </div>
               </div>
               <div className="mx-4 my-4 hidden md:block">
-                <div className="my-5 text-sm text-gray-600 flex">
+                <div className="my-5 text-sm text-gray-8 flex">
                   <div className="mr-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
