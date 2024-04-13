@@ -18,7 +18,7 @@ const Home = () => {
   const [bgAudioPausedAt, setBgAudioPausedAt] = useState(0);
 
   // Set volume level for both audio
-  audio.volume = 0.28; // 28% volume
+  audio.volume = 0.35; // 35% volume
   bgaudio.volume = 0.18; // 18% volume
 
   const playSound = () => {
