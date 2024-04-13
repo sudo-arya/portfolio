@@ -93,7 +93,7 @@ function MyPDFViewer() {
           {Array.from(new Array(numPages), (el, index) => (
             <Page
               key={`page_${index + 1}`}
-              width={parseInt(window.innerWidth >= 768 ? "860" : "375")}
+              width={parseInt(window.innerWidth >= 768 ? "1100" : "375")}
               pageNumber={index + 1}
               renderTextLayer={false}
               renderAnnotationLayer={true}
