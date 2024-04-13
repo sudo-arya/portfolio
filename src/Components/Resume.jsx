@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect } from "react";
+import { useState,useEffect } from "react";
 
 import "../App.css";
 import Navbar from "./Navbar";
@@ -23,6 +23,19 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/b
 
 const Resume = () => {
   const { pathname } = useLocation();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -121,8 +134,15 @@ const Resume = () => {
           </div>
         )}
         {/* <div className="md:w-2/3 w-full sm:border-l-2"> */}
-        <div className="xl:max-w-[800px] w-screen flex flex-cols justify-center">
-          <MyPDFViewer />
+        <div className="body mt-6 max-w-screen-lg md:flex mx-auto justify-center">
+          {windowWidth >= 768 && (
+            <div className="xl:max-w-[360px] w-screen mr-20 flex flex-cols justify-center">
+              {/* Content for larger screens */}
+            </div>
+          )}
+          <div className="xl:max-w-[800px] w-screen flex flex-cols justify-center">
+            <MyPDFViewer pdfUrl="../../public/resumes/Deepanshu_Arya_9210760003.pdf" />
+          </div>
         </div>
       </div>
       <footer className="mt-auto bottom-0 z-50 flex flex-cols justify-center items-center">

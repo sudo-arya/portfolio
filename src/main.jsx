@@ -10,19 +10,24 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
   },
   {
     path: "/Home",
-    element: <Home/>,
+    element: <Home />,
   },
   {
     path: "/DeepanshuArya-Resume",
-    element: <Resume/>,
+    element: <Resume />,
   },
   {
     path: "/DeepanshuArya-Projects",
-    element: <Projects/>,
+    element: <Projects />,
+  },
+  // Update your router configuration accordingly
+  {
+    path: "/assets/Deepanshu_Arya_9210760003.pdf",
+    element: <Resume />, // Or any other component you want to render when accessing the PDF URL
   },
 ]);
 
