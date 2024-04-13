@@ -55,8 +55,10 @@ function MyPDFViewer() {
     // For big screens, open link in new tab
     if (window.innerWidth >= 1280) {
       window.open(url, "_blank");
+      // window.location.href = url;
     } else {
-      window.location.href = url;
+      // window.location.href = url;
+      window.open(url, "_blank");
     }
     e.preventDefault(); // Prevent default behavior of anchor tag
   };
