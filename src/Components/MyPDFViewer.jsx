@@ -69,8 +69,8 @@ function MyPDFViewer() {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/dist/resumes/Deepanshu_Arya_9210760003.pdf"; // Replace with the actual path to your PDF
-    link.download = "Deepanshu_Arya_9210760003.pdf";
+    link.href = "/dist/resumes/deepanshu_arya_9210760003.pdf"; // Replace with the actual path to your PDF
+    link.download = "deepanshu_arya_9210760003.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -86,7 +86,7 @@ function MyPDFViewer() {
           Download Resume
         </button>
         <Document
-          file="/dist/resumes/Deepanshu_Arya_9210760003.pdf"
+          file="/dist/resumes/deepanshu_arya_9210760003.pdf"
           onLoadSuccess={onDocumentLoadSuccess}
         >
           {Array.from(new Array(numPages), (el, index) => (

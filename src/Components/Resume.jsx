@@ -141,7 +141,7 @@ const Resume = () => {
             </div>
           )}
           <div className="xl:max-w-[800px] w-screen flex flex-cols justify-center">
-            <MyPDFViewer pdfUrl="/dist/resumes/Deepanshu_Arya_9210760003.pdf" />
+            <MyPDFViewer pdfUrl="/dist/resumes/deepanshu_arya_9210760003.pdf" />
           </div>
         </div>
       </div>
