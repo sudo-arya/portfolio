@@ -70,7 +70,7 @@ function MyPDFViewer() {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "../../public/resumes/resume.pdf"; // Replace with the actual path to your PDF
+    link.href = "/resumes/resume.pdf"; // Replace with the actual path to your PDF
     link.download = "deepanshu.pdf";
     document.body.appendChild(link);
     link.click();
@@ -87,7 +87,7 @@ function MyPDFViewer() {
           Download Resume
         </button>
         <Document
-          file="../../public/resumes/resume.pdf"
+          file="/resumes/resume.pdf"
           onLoadSuccess={onDocumentLoadSuccess}
         >
           {Array.from(new Array(numPages), (el, index) => (

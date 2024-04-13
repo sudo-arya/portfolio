@@ -26,7 +26,7 @@ const router = createBrowserRouter([
   },
   // Adjust the route path to match your directory structure
   {
-    path: "/resume/resume.pdf",
+    path: "/resumes/resume.pdf",
     element: <Resume />, // Render the Resume component or any other component you want to use to serve the PDF file
   },
 ]);
