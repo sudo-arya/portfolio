@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "../assets/Projects.css";
@@ -30,27 +30,13 @@ const projects = [
 
 const Projects = () => {
   const { pathname } = useLocation();
-  const [storedProjects, setStoredProjects] = useState([]);
 
   useEffect(() => {
-    // Check if projects are stored in localStorage
-    const storedProjects = localStorage.getItem("projects");
-    if (storedProjects) {
-      // If projects are found, parse and set them to state
-      setStoredProjects(JSON.parse(storedProjects));
-    } else {
-      // If no projects are stored, set the default projects to state
-      setStoredProjects(projects);
-    }
-
     window.scrollTo(0, 0);
-
-    // Save projects to localStorage whenever projects change
-    localStorage.setItem("projects", JSON.stringify(storedProjects));
   }, [pathname]);
 
   const renderProjects = () => {
-    return storedProjects.map((project, index) => (
+    return projects.map((project, index) => (
       <div key={index} className="projects-card">
         <div className="projects-card-header">
           <h2 className="projects-card-title">{project.title}</h2>
