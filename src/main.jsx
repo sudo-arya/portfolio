@@ -7,7 +7,6 @@ import Resume from "./Components/Resume.jsx";
 import Projects from "./Components/Projects.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,15 +24,15 @@ const router = createBrowserRouter([
     path: "/DeepanshuArya-Projects",
     element: <Projects />,
   },
-  // Update your router configuration accordingly
+  // Adjust the route path to match your directory structure
   {
-    path: "dist/resumes/deepanshu_arya_9210760003.pdf",
-    element: <Resume />, // Or any other component you want to render when accessing the PDF URL
+    path: "/resume/Deepanshu_Arya_9210760003.pdf",
+    element: <Resume />, // Render the Resume component or any other component you want to use to serve the PDF file
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-        <RouterProvider router={router}></RouterProvider>
+    <RouterProvider router={router}></RouterProvider>
   </React.StrictMode>
 );
