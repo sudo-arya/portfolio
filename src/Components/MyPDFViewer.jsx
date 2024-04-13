@@ -5,6 +5,7 @@ import { pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 
 
+
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 function MyPDFViewer() {
@@ -69,8 +70,8 @@ function MyPDFViewer() {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/dist/resumes/resume.pdf"; // Replace with the actual path to your PDF
-    link.download = "deepanshu_arya_9210760003.pdf";
+    link.href = "../../public/resumes/resume.pdf"; // Replace with the actual path to your PDF
+    link.download = "deepanshu.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -86,7 +87,7 @@ function MyPDFViewer() {
           Download Resume
         </button>
         <Document
-          file="/dist/resumes/resume.pdf"
+          file="../../public/resumes/resume.pdf"
           onLoadSuccess={onDocumentLoadSuccess}
         >
           {Array.from(new Array(numPages), (el, index) => (

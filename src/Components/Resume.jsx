@@ -12,6 +12,7 @@ import { useLocation } from "react-router-dom";
 import MyPDFViewer from "../Components/MyPDFViewer";
 import { pdfjs } from "react-pdf";
 
+
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 // const App = () => (
@@ -141,7 +142,7 @@ const Resume = () => {
             </div>
           )}
           <div className="xl:max-w-[800px] w-screen flex flex-cols justify-center">
-            <MyPDFViewer pdfUrl="/dist/resumes/resume.pdf" />
+            <MyPDFViewer pdfUrl="../../public/resumes/resume.pdf" />
           </div>
         </div>
       </div>
