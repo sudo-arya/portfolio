@@ -35,6 +35,17 @@ const Projects = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    const confirmNavigation = (event) => {
+      event.preventDefault();
+      event.returnValue = "";
+    };
+
+    window.addEventListener("beforeunload", confirmNavigation);
+
+    return () => {
+      window.removeEventListener("beforeunload", confirmNavigation);
+    };
   }, [pathname]);
 
   const renderProjects = () => {
