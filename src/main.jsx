@@ -7,6 +7,7 @@ import Resume from "./Components/Resume.jsx";
 import Projects from "./Components/Projects.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
   },
   // Update your router configuration accordingly
   {
-    path: "/assets/Deepanshu_Arya_9210760003.pdf",
+    path: "../public/resumes/Deepanshu_Arya_9210760003.pdf",
     element: <Resume />, // Or any other component you want to render when accessing the PDF URL
   },
 ]);
