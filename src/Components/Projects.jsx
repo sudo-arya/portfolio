@@ -20,6 +20,13 @@ const projects = [
     img: "https://cdn-icons-gif.flaticon.com/15571/15571133.gif",
   },
   {
+    title: "Portfolio Website",
+    desc: "An online platform intended for the comprehensive display of professional achievements and creative endeavors in a polished and visually appealing manner.",
+    techstack: "(React | Tailwind | Vite | React-pdf)",
+    href: "https://github.com/sudo-arya/portfolio/",
+    img: "https://cdn-icons-gif.flaticon.com/15557/15557819.gif",
+  },
+  {
     title: "Alumni Management Portal",
     desc: "An online platform fostering seamless communication and engagement between alumni and their alma mater, facilitating collaboration and networking opportunities for both parties.",
     techstack: "(Html | CSS | Js | Php)",
