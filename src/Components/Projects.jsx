@@ -35,37 +35,7 @@ const projects = [
   },
 ];
 
-const withReloadProtection = (WrappedComponent) => {
-  return (props) => {
-    const { pathname } = useLocation();
-    const [reloadAttempted, setReloadAttempted] = useState(false);
 
-    useEffect(() => {
-      const handleBeforeUnload = () => {
-        setReloadAttempted(true);
-      };
-
-      window.addEventListener("beforeunload", handleBeforeUnload);
-
-      return () => {
-        window.removeEventListener("beforeunload", handleBeforeUnload);
-      };
-    }, []);
-
-    useEffect(() => {
-      if (reloadAttempted) {
-        // Redirect to the specified URL if reloadAttempted is true
-        window.location.href = "https://sudo-arya.netlify.app/";
-      }
-    }, [reloadAttempted]);
-
-    if (!reloadAttempted) {
-      return <WrappedComponent {...props} />;
-    } else {
-      return null;
-    }
-  };
-};
 
 const Projects = () => {
   const renderProjects = () => {
@@ -113,4 +83,36 @@ const Projects = () => {
   );
 };
 
+const withReloadProtection = (WrappedComponent) => {
+  return (props) => {
+    const { pathname } = useLocation();
+    const [reloadAttempted, setReloadAttempted] = useState(false);
+
+    useEffect(() => {
+      const handleBeforeUnload = () => {
+        setReloadAttempted(true);
+      };
+
+      window.addEventListener("beforeunload", handleBeforeUnload);
+
+      return () => {
+        window.removeEventListener("beforeunload", handleBeforeUnload);
+      };
+    }, []);
+
+    useEffect(() => {
+      if (reloadAttempted) {
+        window.location.href = "https://sudo-arya.netlify.app/";
+      }
+    }, [reloadAttempted]);
+
+    if (!reloadAttempted) {
+      return <WrappedComponent {...props} />;
+    } else {
+      return null;
+    }
+  };
+};
+
 export default withReloadProtection(Projects);
+// export default withReloadProtection(Projects);
