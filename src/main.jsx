@@ -27,7 +27,7 @@ const router = createBrowserRouter([
   },
   // Update your router configuration accordingly
   {
-    path: "public/resumes/Deepanshu_Arya_9210760003.pdf",
+    path: "/public/resumes/Deepanshu_Arya_9210760003.pdf",
     element: <Resume />, // Or any other component you want to render when accessing the PDF URL
   },
 ]);
