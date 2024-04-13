@@ -19,7 +19,7 @@ const Home = () => {
 
   // Set volume level for both audio
   audio.volume = 0.25; // 5% volume
-  bgaudio.volume = 0.15; // 1% volume
+  bgaudio.volume = 0.18; // 1% volume
 
   const playSound = () => {
     audio.play();
