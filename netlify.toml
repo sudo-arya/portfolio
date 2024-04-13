@@ -1,6 +1,6 @@
 # example netlify.toml
 [build]
-  command = "npm run build cp -r ./public ./dist && npm run build"
+  command = "cp -r ./public ./dist && npm run build"
   functions = "netlify/functions"
   publish = "dist"
 
