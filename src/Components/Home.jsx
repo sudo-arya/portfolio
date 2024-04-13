@@ -79,7 +79,7 @@ const Home = () => {
 
           {/* DOWNLOAD CV CARD */}
           <div
-            target="_blank"
+            target="_self"
             className="text-decoration transition duration-500 ease-in-out scale text-white rounded-3xl flex flex-col col-span-1 relative overflow-hidden aspect-square shadow-sm bg-[#316c3bd3] p-4 justify-center items-center"
           >
             <svg
@@ -98,6 +98,7 @@ const Home = () => {
             <div className="">
               <a
                 href="/DeepanshuArya-Resume"
+                target="_self"
                 onMouseEnter={playSound}
                 onMouseLeave={stopSound}
               >
@@ -288,7 +289,6 @@ const Home = () => {
                   viewBox="0 0 24 24"
                   color="white"
                   className="text-xs md:text-5xl hidden md:flex"
-                  
                   style={{ color: "transparent" }}
                   height="1em"
                   width="1em"
