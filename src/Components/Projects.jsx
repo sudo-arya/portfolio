@@ -48,7 +48,7 @@ const withReloadProtection = (WrappedComponent) => {
     useEffect(() => {
       if (reloadAttempted) {
         // Redirect to the specified URL if reloadAttempted is true
-        window.location.href = "/DeepanshuArya-Projects";
+        window.location.href = "https://sudo-arya.netlify.app/";
       }
     }, [reloadAttempted]);
 

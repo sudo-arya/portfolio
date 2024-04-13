@@ -42,6 +42,8 @@ const Resume = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+
+
   return (
     <div className="md:container md:mx-auto flex flex-col min-h-screen">
       <header className="sticky top-0 z-50 sm:px-16 px-6 flex justify-center items-center">
@@ -187,4 +189,36 @@ const Resume = () => {
 // // Call the function to check for IDM on page load
 // isIDMActive();
 
-export default Resume;
+
+const withReloadProtection = (WrappedComponent) => {
+  return (props) => {
+    const { pathname } = useLocation();
+    const [reloadAttempted, setReloadAttempted] = useState(false);
+
+    useEffect(() => {
+      const handleBeforeUnload = () => {
+        setReloadAttempted(true);
+      };
+
+      window.addEventListener("beforeunload", handleBeforeUnload);
+
+      return () => {
+        window.removeEventListener("beforeunload", handleBeforeUnload);
+      };
+    }, []);
+
+    useEffect(() => {
+      if (reloadAttempted) {
+        window.location.href = "https://sudo-arya.netlify.app/";
+      }
+    }, [reloadAttempted]);
+
+    if (!reloadAttempted) {
+      return <WrappedComponent {...props} />;
+    } else {
+      return null;
+    }
+  };
+};
+
+export default withReloadProtection(Resume);
