@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "../assets/Projects.css";
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const projects = [
   {
@@ -32,12 +32,9 @@ const withReloadProtection = (WrappedComponent) => {
   return (props) => {
     const { pathname } = useLocation();
     const [reloadAttempted, setReloadAttempted] = useState(false);
-    const history = useHistory();
 
     useEffect(() => {
-      // Listen for beforeunload event to detect reload attempts
-      const handleBeforeUnload = (event) => {
-        // Set reloadAttempted to true to indicate a reload attempt
+      const handleBeforeUnload = () => {
         setReloadAttempted(true);
       };
 
@@ -49,17 +46,15 @@ const withReloadProtection = (WrappedComponent) => {
     }, []);
 
     useEffect(() => {
-      // Redirect to the specified URL if reloadAttempted is true
       if (reloadAttempted) {
-        history.push("/DeepanshuArya-Projects");
+        // Redirect to the specified URL if reloadAttempted is true
+        window.location.href = "/DeepanshuArya-Projects";
       }
-    }, [reloadAttempted, history]);
+    }, [reloadAttempted]);
 
-    // Render the wrapped component if no reload attempt has been detected
     if (!reloadAttempted) {
       return <WrappedComponent {...props} />;
     } else {
-      // Render nothing if a reload attempt has been detected
       return null;
     }
   };
@@ -111,5 +106,4 @@ const Projects = () => {
   );
 };
 
-// Apply the reload protection higher-order component to the Projects component
 export default withReloadProtection(Projects);
