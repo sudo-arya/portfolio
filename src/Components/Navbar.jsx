@@ -87,7 +87,7 @@ export default function Navbar() {
       )}
 
       {/* Desktop Navbar */}
-      <div className="hidden md:block justify-center px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8 ">
+      <div className="hidden  justify-center px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8 ">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <div className="md:hidden">
