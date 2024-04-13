@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "../assets/Projects.css";
@@ -26,30 +26,31 @@ const projects = [
     href: "https://github.com/sudo-arya/MPR-PROJECT",
     img: "https://cdn-icons-gif.flaticon.com/12035/12035096.gif",
   },
-
-
 ];
 
 const Projects = () => {
   const { pathname } = useLocation();
+  const [storedProjects, setStoredProjects] = useState([]);
 
   useEffect(() => {
+    // Check if projects are stored in localStorage
+    const storedProjects = localStorage.getItem("projects");
+    if (storedProjects) {
+      // If projects are found, parse and set them to state
+      setStoredProjects(JSON.parse(storedProjects));
+    } else {
+      // If no projects are stored, set the default projects to state
+      setStoredProjects(projects);
+    }
+
     window.scrollTo(0, 0);
 
-    const confirmNavigation = (event) => {
-      event.preventDefault();
-      event.returnValue = "";
-    };
-
-    window.addEventListener("beforeunload", confirmNavigation);
-
-    return () => {
-      window.removeEventListener("beforeunload", confirmNavigation);
-    };
+    // Save projects to localStorage whenever projects change
+    localStorage.setItem("projects", JSON.stringify(storedProjects));
   }, [pathname]);
 
   const renderProjects = () => {
-    return projects.map((project, index) => (
+    return storedProjects.map((project, index) => (
       <div key={index} className="projects-card">
         <div className="projects-card-header">
           <h2 className="projects-card-title">{project.title}</h2>
