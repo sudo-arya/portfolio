@@ -102,7 +102,7 @@ const withReloadProtection = (WrappedComponent) => {
 
     useEffect(() => {
       if (reloadAttempted) {
-        window.location.href = "https://sudo-arya.netlify.app/";
+        window.location.href = "/";
       }
     }, [reloadAttempted]);
 
