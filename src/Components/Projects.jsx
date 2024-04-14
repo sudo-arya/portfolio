@@ -16,7 +16,7 @@ const projects = [
   {
     title: "Id Card Generator Software",
     desc: "A software build to automate the creation of College ID cards, whether its for students or staff.",
-    techstack: "(Python | Tkinter | Html2Image)",
+    techstack: "(jinja2 | html2image | fpdf | Tkinter)",
     href: "https://github.com/sudo-arya/idcardgenerator",
     github: "https://github.com/sudo-arya/idcardgenerator",
     img: "https://cdn-icons-gif.flaticon.com/15571/15571133.gif",
@@ -38,8 +38,6 @@ const projects = [
     img: "https://cdn-icons-gif.flaticon.com/12035/12035096.gif",
   },
 ];
-
-
 
 const Projects = () => {
   const renderProjects = () => {
