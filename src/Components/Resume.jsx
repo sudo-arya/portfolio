@@ -46,7 +46,7 @@ const Resume = () => {
 
   return (
     <div className="md:container md:mx-auto flex flex-col min-h-screen">
-      <header className="sticky top-0 z-50 sm:px-16 px-6 flex justify-center items-center">
+      <header className="sticky top-0 z-50  flex justify-center items-center">
         <div className="xl:max-w-[1280px] w-full">
           <Navbar />
         </div>
