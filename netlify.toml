@@ -4,6 +4,17 @@
   functions = "netlify/functions"
   publish = "dist"
 
+  
+[[redirects]]
+  from = "/DeepanshuArya-Resume/*" # Adjust the route path as needed
+  to = "/index.html" # Assuming your Resume component is rendered from the root index.html
+  status = 200
+
+[[redirects]]
+  from = "/DeepanshuArya-Projects/*" # Adjust the route path as needed
+  to = "/index.html" # Assuming your Projects component is rendered from the root index.html
+  status = 200
+
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
   #[[redirects]]
