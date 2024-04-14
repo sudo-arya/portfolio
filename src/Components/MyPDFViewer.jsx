@@ -89,7 +89,7 @@ function MyPDFViewer() {
           Download Resume
         </button>
         <Document
-          file="/resumes/Deepanshu_Arya_9210760003.pdf"
+          file="https://sudo-arya.netlify.app/resumes/Deepanshu_Arya_9210760003.pdf"
           onLoadSuccess={onDocumentLoadSuccess}
         >
           {Array.from(new Array(numPages), (el, index) => (
