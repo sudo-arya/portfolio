@@ -103,18 +103,18 @@ function MyPDFViewer() {
             />
           ))}
         </Document>
-        <p style={{ fontSize: fontSize, marginTop: 10 }}>
+        {/* <p style={{ fontSize: fontSize, marginTop: 10 }}>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Page {pageNumber} of{" "}
           {numPages}
-        </p>
+        </p> */}
 
-        {pageNumber > 1 && (
+        {/* {pageNumber > 1 && (
           <button onClick={changePageBack}>Previous Page</button>
         )}
 
         {pageNumber < numPages && (
           <button onClick={changePageNext}>Next Page</button>
-        )}
+        )} */}
       </header>
     </div>
   );
